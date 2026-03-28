@@ -6,24 +6,16 @@
   <title>Hanaé Cuisine ⭐</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
   <style>
-    /* ─── Variables ─────────────────────────────── */
     :root {
-      --turquoise: #00c9a7;
-      --turq-dark: #00a589;
-      --pink:      #ff6eb4;
-      --pink-dark: #e0508f;
-      --yellow:    #ffd93d;
-      --orange:    #ff922b;
-      --red:       #ff4757;
-      --purple:    #a55eea;
-      --blue:      #4dabf7;
-      --green:     #51cf66;
-      --bg:        #fff5f9;
-      --card:      #ffffff;
-      --text:      #3d2b56;
+      --turquoise: #00c9a7; --turq-dark: #00a589;
+      --pink: #ff6eb4;      --pink-dark: #e0508f;
+      --yellow: #ffd93d;    --orange: #ff922b;
+      --red: #ff4757;       --purple: #a55eea;
+      --blue: #4dabf7;      --green: #51cf66;
+      --bg: #fff5f9;        --card: #ffffff;
+      --text: #3d2b56;
     }
 
-    /* ─── Reset & Base ──────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
       height: 100%;
@@ -34,12 +26,10 @@
       touch-action: manipulation;
     }
 
-    /* ─── Floating food deco ─────────────────────── */
+    /* ─── Floating deco ─── */
     .deco {
-      position: fixed;
-      pointer-events: none;
-      font-size: 2rem;
-      opacity: .18;
+      position: fixed; pointer-events: none;
+      font-size: 2rem; opacity: .18;
       animation: float-deco var(--dur, 6s) ease-in-out infinite;
       animation-delay: var(--delay, 0s);
     }
@@ -48,7 +38,7 @@
       50%       { transform: translateY(-20px) rotate(12deg); }
     }
 
-    /* ─── Screens ───────────────────────────────── */
+    /* ─── Screens ─── */
     .screen {
       position: absolute; inset: 0;
       display: flex; flex-direction: column;
@@ -56,215 +46,129 @@
       padding: 20px;
       transition: opacity .35s, transform .35s;
     }
-    .screen.hidden {
-      opacity: 0; pointer-events: none; transform: scale(.95);
-    }
+    .screen.hidden { opacity: 0; pointer-events: none; transform: scale(.95); }
 
-    /* ─── Start screen ──────────────────────────── */
+    /* ─── Start screen ─── */
     #start-screen {
-      gap: 20px;
+      gap: 18px;
       background: linear-gradient(160deg, #fff0f8 0%, #e8f8ff 50%, #f0fff4 100%);
     }
-    .logo {
-      font-size: 80px;
-      animation: bounce 1.4s ease-in-out infinite;
-      filter: drop-shadow(0 6px 10px rgba(0,0,0,.15));
-    }
+    .logo { font-size: 80px; animation: bounce 1.4s ease-in-out infinite; filter: drop-shadow(0 6px 10px rgba(0,0,0,.15)); }
     h1 {
-      font-size: clamp(2rem, 8vw, 3rem);
-      text-align: center;
-      color: var(--pink);
-      -webkit-text-stroke: 2px #fff;
+      font-size: clamp(2rem, 8vw, 3rem); text-align: center;
+      color: var(--pink); -webkit-text-stroke: 2px #fff;
       paint-order: stroke fill;
-      text-shadow: 3px 4px 0 var(--pink-dark);
-      letter-spacing: 1px;
+      text-shadow: 3px 4px 0 var(--pink-dark); letter-spacing: 1px;
     }
-    .subtitle {
-      font-size: 1rem;
-      color: var(--purple);
-      text-align: center;
-      line-height: 1.5;
-      max-width: 300px;
-      font-weight: 700;
-    }
+    .subtitle { font-size: .95rem; color: var(--purple); text-align: center; line-height: 1.5; max-width: 320px; font-weight: 700; }
     .rules-box {
-      background: #fff;
-      border: 3px solid var(--turquoise);
-      border-radius: 24px;
-      padding: 16px 22px;
-      font-size: .95rem;
-      line-height: 2;
-      max-width: 320px;
-      color: var(--text);
-      box-shadow: 4px 5px 0 #b2f0e2;
+      background: #fff; border: 3px solid var(--turquoise);
+      border-radius: 24px; padding: 14px 20px;
+      font-size: .9rem; line-height: 2; max-width: 320px;
+      color: var(--text); box-shadow: 4px 5px 0 #b2f0e2;
     }
     .rules-box li { list-style: none; }
     .rules-box li::before { content: '🍴 '; }
+    .continent-list {
+      display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; max-width: 340px;
+    }
+    .continent-badge {
+      background: #fff; border-radius: 50px; padding: 5px 14px;
+      font-size: .85rem; font-weight: 800; border: 2px solid;
+    }
 
-    /* ─── Big play button ───────────────────────── */
+    /* ─── Play button ─── */
     .btn-play {
       background: linear-gradient(135deg, var(--pink), var(--pink-dark));
-      color: #fff;
-      border: none;
-      border-radius: 50px;
-      padding: 20px 56px;
-      font-size: 1.35rem;
-      font-weight: 900;
-      font-family: inherit;
-      cursor: pointer;
-      letter-spacing: 1px;
+      color: #fff; border: none; border-radius: 50px;
+      padding: 18px 52px; font-size: 1.25rem; font-weight: 900;
+      font-family: inherit; cursor: pointer; letter-spacing: 1px;
       box-shadow: 0 6px 0 var(--pink-dark), 0 10px 20px rgba(255,110,180,.4);
       transition: transform .12s, box-shadow .12s;
     }
-    .btn-play:active {
-      transform: translateY(4px);
-      box-shadow: 0 2px 0 var(--pink-dark), 0 4px 10px rgba(255,110,180,.3);
-    }
+    .btn-play:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--pink-dark), 0 4px 10px rgba(255,110,180,.3); }
 
-    /* ─── Game screen ───────────────────────────── */
+    /* ─── Game screen ─── */
     #game-screen {
-      gap: 14px;
+      gap: 12px;
       background: linear-gradient(160deg, #fff0f8 0%, #e8f8ff 50%, #f0fff4 100%);
       justify-content: flex-start;
-      padding-top: 28px;
+      padding-top: 24px;
+    }
+
+    /* Continent banner */
+    .continent-banner {
+      width: 100%; max-width: 420px;
+      border-radius: 18px; padding: 8px 20px;
+      text-align: center; font-size: 1rem; font-weight: 900;
+      color: #fff; letter-spacing: .5px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.15);
     }
 
     /* HUD */
-    .hud {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      max-width: 420px;
-    }
+    .hud { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 420px; }
     .hud-score {
-      background: #fff;
-      border: 3px solid var(--yellow);
-      border-radius: 50px;
-      padding: 6px 18px;
-      font-size: .9rem;
-      font-weight: 800;
-      color: var(--orange);
+      background: #fff; border: 3px solid var(--yellow);
+      border-radius: 50px; padding: 6px 16px;
+      font-size: .85rem; font-weight: 800; color: var(--orange);
       box-shadow: 2px 3px 0 #e6a800;
     }
-    .hud-score span { font-size: 1.3rem; color: var(--orange); }
+    .hud-score span { font-size: 1.2rem; }
     .hud-counter {
-      background: #fff;
-      border: 3px solid var(--purple);
-      border-radius: 50px;
-      padding: 6px 18px;
-      font-size: .9rem;
-      font-weight: 800;
-      color: var(--purple);
+      background: #fff; border: 3px solid var(--purple);
+      border-radius: 50px; padding: 6px 16px;
+      font-size: .85rem; font-weight: 800; color: var(--purple);
       box-shadow: 2px 3px 0 #7c3aed;
+    }
+    .hud-pass {
+      background: #fff; border: 3px solid var(--green);
+      border-radius: 50px; padding: 6px 14px;
+      font-size: .8rem; font-weight: 800; color: #37a34a;
+      box-shadow: 2px 3px 0 #37a34a;
     }
 
     /* Timer */
     .timer-wrap { width: 100%; max-width: 420px; }
-    .timer-bar-bg {
-      background: #ffe0ef;
-      border-radius: 50px;
-      height: 18px;
-      overflow: hidden;
-      border: 2px solid #ffc0d9;
-    }
-    .timer-bar {
-      height: 100%;
-      border-radius: 50px;
-      background: linear-gradient(90deg, var(--turquoise), #00e5c0);
-      transition: width .9s linear;
-      width: 100%;
-    }
+    .timer-bar-bg { background: #ffe0ef; border-radius: 50px; height: 16px; overflow: hidden; border: 2px solid #ffc0d9; }
+    .timer-bar { height: 100%; border-radius: 50px; background: linear-gradient(90deg, var(--turquoise), #00e5c0); transition: width .9s linear; width: 100%; }
     .timer-bar.low { background: linear-gradient(90deg, var(--orange), var(--red)); }
-    .timer-label {
-      text-align: right;
-      font-size: .9rem;
-      font-weight: 800;
-      color: var(--purple);
-      margin-top: 4px;
-    }
+    .timer-label { text-align: right; font-size: .85rem; font-weight: 800; color: var(--purple); margin-top: 3px; }
     .timer-label.low { color: var(--red); animation: wiggle .5s ease infinite; }
 
     /* Recipe card */
     .recipe-card {
-      background: #fff;
-      border: 3px solid var(--turquoise);
-      border-radius: 28px;
-      padding: 20px 24px;
-      text-align: center;
-      width: 100%;
-      max-width: 420px;
+      background: #fff; border: 3px solid var(--turquoise);
+      border-radius: 28px; padding: 18px 22px; text-align: center;
+      width: 100%; max-width: 420px;
       box-shadow: 4px 6px 0 #b2f0e2;
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
     .recipe-card::before {
-      content: '';
-      position: absolute; inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: linear-gradient(135deg, rgba(0,201,167,.07) 0%, rgba(0,229,192,.04) 100%);
       pointer-events: none;
     }
-    .recipe-label {
-      font-size: .75rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--turquoise);
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-    .recipe-name {
-      font-size: clamp(1.5rem, 6.5vw, 2.4rem);
-      font-weight: 900;
-      color: var(--text);
-    }
-    .question-text {
-      font-size: .9rem;
-      color: var(--purple);
-      margin-top: 6px;
-      font-weight: 700;
-    }
+    .recipe-label { font-size: .72rem; text-transform: uppercase; letter-spacing: 2px; color: var(--turquoise); font-weight: 800; margin-bottom: 5px; }
+    .recipe-name { font-size: clamp(1.4rem, 6vw, 2.2rem); font-weight: 900; color: var(--text); }
+    .question-text { font-size: .85rem; color: var(--purple); margin-top: 5px; font-weight: 700; }
 
-    /* Answer buttons — each one a different color */
-    .answers {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      width: 100%;
-      max-width: 420px;
-    }
+    /* Answers */
+    .answers { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; max-width: 420px; }
     .btn-answer {
-      border: none;
-      border-radius: 20px;
-      padding: 18px 10px;
-      font-size: clamp(.9rem, 3.8vw, 1.05rem);
-      font-weight: 800;
-      font-family: inherit;
-      color: #fff;
-      cursor: pointer;
+      border: none; border-radius: 20px; padding: 16px 10px;
+      font-size: clamp(.88rem, 3.6vw, 1rem); font-weight: 800;
+      font-family: inherit; color: #fff; cursor: pointer;
       transition: transform .12s, box-shadow .12s;
-      line-height: 1.3;
-      word-break: break-word;
+      line-height: 1.3; word-break: break-word;
     }
-    .btn-answer:nth-child(1) { background: var(--pink);      box-shadow: 0 5px 0 var(--pink-dark); }
-    .btn-answer:nth-child(2) { background: var(--blue);      box-shadow: 0 5px 0 #2193e8; }
-    .btn-answer:nth-child(3) { background: var(--orange);    box-shadow: 0 5px 0 #c8640a; }
-    .btn-answer:nth-child(4) { background: var(--purple);    box-shadow: 0 5px 0 #7c3aed; }
+    .btn-answer:nth-child(1) { background: var(--pink);   box-shadow: 0 5px 0 var(--pink-dark); }
+    .btn-answer:nth-child(2) { background: var(--blue);   box-shadow: 0 5px 0 #2193e8; }
+    .btn-answer:nth-child(3) { background: var(--orange); box-shadow: 0 5px 0 #c8640a; }
+    .btn-answer:nth-child(4) { background: var(--purple); box-shadow: 0 5px 0 #7c3aed; }
     .btn-answer:active:not(:disabled) { transform: translateY(4px); box-shadow: 0 1px 0 #aaa !important; }
-    .btn-answer.correct {
-      background: var(--green) !important;
-      box-shadow: 0 5px 0 #37a34a !important;
-      animation: pop .4s ease;
-    }
-    .btn-answer.wrong {
-      background: var(--red) !important;
-      box-shadow: 0 5px 0 #c0392b !important;
-      animation: shake .4s ease;
-    }
-    .btn-answer.reveal {
-      background: var(--green) !important;
-      box-shadow: 0 5px 0 #37a34a !important;
-      opacity: .7;
-    }
+    .btn-answer.correct { background: var(--green) !important; box-shadow: 0 5px 0 #37a34a !important; animation: pop .4s ease; }
+    .btn-answer.wrong   { background: var(--red) !important;   box-shadow: 0 5px 0 #c0392b !important; animation: shake .4s ease; }
+    .btn-answer.reveal  { background: var(--green) !important; box-shadow: 0 5px 0 #37a34a !important; opacity: .7; }
     .btn-answer:disabled { cursor: default; }
 
     /* Feedback overlay */
@@ -272,128 +176,176 @@
       position: absolute; inset: 0;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      font-size: clamp(2.8rem, 15vw, 5.5rem);
-      font-weight: 900;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity .2s;
-      z-index: 10;
-      gap: 10px;
-      border-radius: 0;
+      font-size: clamp(1.6rem, 7vw, 2.8rem); font-weight: 900;
+      pointer-events: none; opacity: 0; transition: opacity .2s; z-index: 10; gap: 8px;
     }
     .feedback.show { opacity: 1; }
-    .feedback.correct-fb {
-      background: rgba(255,255,255,.88);
-      color: var(--green);
-      text-shadow: 3px 4px 0 #37a34a;
-    }
-    .feedback.wrong-fb {
-      background: rgba(255,255,255,.88);
-      color: var(--red);
-      text-shadow: 3px 4px 0 #c0392b;
-    }
-    .feedback .pts {
-      font-size: clamp(1.1rem, 5.5vw, 2rem);
-      color: var(--orange);
-      text-shadow: 2px 3px 0 #c8640a;
-    }
+    .feedback.correct-fb { background: rgba(255,255,255,.88); color: var(--green); text-shadow: 3px 4px 0 #37a34a; }
+    .feedback.wrong-fb   { background: rgba(255,255,255,.88); color: var(--red);   text-shadow: 3px 4px 0 #c0392b; }
+    .feedback .pts { font-size: clamp(1rem, 5vw, 1.8rem); color: var(--orange); text-shadow: 2px 3px 0 #c8640a; }
 
     /* Particles */
-    .particle {
-      position: absolute;
-      pointer-events: none;
-      animation: particle-fly .8s ease-out forwards;
-      border-radius: 50%;
+    .particle { position: absolute; pointer-events: none; animation: particle-fly .8s ease-out forwards; border-radius: 50%; }
+
+    /* ─── Travel / Transition screen (Street Fighter 2 style) ─── */
+    #travel-screen {
+      background: linear-gradient(180deg, #04041a 0%, #080830 40%, #0c0c40 100%);
+      gap: 0;
+      overflow: hidden;
+      justify-content: center;
     }
 
-    /* ─── End screen ────────────────────────────── */
+    .travel-star {
+      position: absolute;
+      background: #fff; border-radius: 50%;
+      animation: twinkle var(--s-dur, 2s) ease-in-out infinite;
+      animation-delay: var(--s-delay, 0s);
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: .15; }
+      50%       { opacity: 1; }
+    }
+
+    .travel-score-badge {
+      position: relative; z-index: 5;
+      background: rgba(255,255,255,.12);
+      border: 2px solid rgba(255,255,255,.35);
+      border-radius: 20px; padding: 10px 24px;
+      color: #fff; font-size: 1rem; font-weight: 800;
+      text-align: center; margin-bottom: 8px;
+    }
+    .travel-score-badge .pass-label {
+      font-size: 1.4rem; display: block; margin-bottom: 2px;
+    }
+
+    .travel-continents {
+      position: relative; z-index: 5;
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 24px;
+    }
+    .travel-cont-box {
+      background: rgba(255,255,255,.12);
+      border: 2px solid rgba(255,255,255,.3);
+      border-radius: 16px; padding: 10px 18px;
+      color: #fff; font-size: .95rem; font-weight: 800;
+      text-align: center; min-width: 100px;
+    }
+    .travel-cont-box .cont-emoji { font-size: 2rem; display: block; }
+    .travel-arrow-sep { font-size: 1.8rem; color: rgba(255,255,255,.5); }
+
+    /* Route container */
+    .travel-route-wrap {
+      position: relative; z-index: 5;
+      width: 88%; max-width: 380px;
+      height: 70px; margin-bottom: 28px;
+    }
+    .route-dashes {
+      position: absolute; top: 50%; left: 0; right: 0;
+      height: 2px; transform: translateY(-50%);
+      background: repeating-linear-gradient(90deg,
+        rgba(255,255,255,.25) 0, rgba(255,255,255,.25) 10px,
+        transparent 10px, transparent 20px);
+    }
+    .route-glow {
+      position: absolute; top: 50%; left: 0;
+      height: 3px; width: 0%;
+      background: var(--yellow);
+      box-shadow: 0 0 10px var(--yellow), 0 0 20px rgba(255,217,61,.6);
+      transform: translateY(-50%);
+      animation: draw-route 3.2s linear forwards;
+    }
+    @keyframes draw-route {
+      0%   { width: 0%; }
+      100% { width: 100%; }
+    }
+    .plane-mover {
+      position: absolute;
+      font-size: 2.4rem;
+      top: 50%;
+      left: 0%;
+      transform: translateY(-50%);
+      animation: fly-across 3.2s ease-in-out forwards;
+      filter: drop-shadow(0 0 10px rgba(255,217,61,.9));
+    }
+    @keyframes fly-across {
+      0%   { left:  0%; top: 50%; }
+      20%  { left: 22%; top: 25%; }
+      50%  { left: 48%; top: 12%; }
+      78%  { left: 74%; top: 25%; }
+      100% { left: 90%; top: 50%; }
+    }
+
+    .travel-destination {
+      position: relative; z-index: 5;
+      color: rgba(255,255,255,.0);
+      font-size: 1.2rem; font-weight: 900; text-align: center;
+      animation: reveal-dest 1s ease 2s forwards;
+    }
+    @keyframes reveal-dest {
+      from { color: rgba(255,255,255,0); transform: translateY(8px); }
+      to   { color: #fff; transform: translateY(0); }
+    }
+
+    /* ─── End screen ─── */
     #end-screen {
-      gap: 20px;
+      gap: 18px;
       background: linear-gradient(160deg, #fff0f8 0%, #e8f8ff 50%, #f0fff4 100%);
     }
     .trophy { font-size: 90px; animation: bounce 1.3s ease-in-out infinite; }
-    .end-title {
-      font-size: clamp(1.7rem, 7.5vw, 2.6rem);
-      font-weight: 900;
-      color: var(--pink);
-      text-shadow: 3px 4px 0 var(--pink-dark);
-      text-align: center;
-    }
-    .final-score {
-      font-size: clamp(4rem, 18vw, 6.5rem);
-      font-weight: 900;
-      color: var(--orange);
-      text-shadow: 4px 5px 0 #c8640a;
-      animation: pop .5s ease;
-      line-height: 1;
-    }
-    .final-max {
-      font-size: 1rem;
-      color: var(--purple);
-      font-weight: 800;
-      margin-top: -8px;
-    }
+    .end-title { font-size: clamp(1.5rem, 7vw, 2.4rem); font-weight: 900; color: var(--pink); text-shadow: 3px 4px 0 var(--pink-dark); text-align: center; }
+    .final-score { font-size: clamp(3.5rem, 16vw, 6rem); font-weight: 900; color: var(--orange); text-shadow: 4px 5px 0 #c8640a; animation: pop .5s ease; line-height: 1; }
+    .final-max { font-size: .95rem; color: var(--purple); font-weight: 800; margin-top: -8px; }
     .end-comment {
-      font-size: 1.05rem;
-      color: var(--text);
-      font-weight: 700;
-      text-align: center;
-      max-width: 300px;
-      line-height: 1.6;
-      background: #fff;
-      border: 3px solid var(--yellow);
-      border-radius: 20px;
-      padding: 14px 20px;
-      box-shadow: 3px 4px 0 #e6a800;
+      font-size: 1rem; color: var(--text); font-weight: 700;
+      text-align: center; max-width: 300px; line-height: 1.6;
+      background: #fff; border: 3px solid var(--yellow);
+      border-radius: 20px; padding: 12px 18px; box-shadow: 3px 4px 0 #e6a800;
     }
     .btn-retry {
       background: linear-gradient(135deg, var(--turquoise), var(--turq-dark));
-      color: #fff;
-      border: none;
-      border-radius: 50px;
-      padding: 18px 52px;
-      font-size: 1.2rem;
-      font-weight: 900;
-      font-family: inherit;
-      cursor: pointer;
+      color: #fff; border: none; border-radius: 50px;
+      padding: 16px 48px; font-size: 1.15rem; font-weight: 900;
+      font-family: inherit; cursor: pointer;
       box-shadow: 0 6px 0 var(--turq-dark), 0 10px 20px rgba(0,201,167,.35);
       transition: transform .12s, box-shadow .12s;
     }
-    .btn-retry:active {
-      transform: translateY(4px);
-      box-shadow: 0 2px 0 var(--turq-dark), 0 4px 10px rgba(0,201,167,.2);
-    }
+    .btn-retry:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--turq-dark), 0 4px 10px rgba(0,201,167,.2); }
 
-    /* ─── Keyframes ─────────────────────────────── */
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0) rotate(-3deg); }
-      50%       { transform: translateY(-16px) rotate(3deg); }
+    /* ─── Keyframes ─── */
+    @keyframes bounce { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-16px) rotate(3deg); } }
+    @keyframes pop    { 0% { transform: scale(.5) rotate(-8deg); } 60% { transform: scale(1.2) rotate(4deg); } 100% { transform: scale(1) rotate(0deg); } }
+    @keyframes shake  { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-10px) rotate(-3deg); } 40% { transform: translateX(10px) rotate(3deg); } 60% { transform: translateX(-7px); } 80% { transform: translateX(7px); } }
+    @keyframes wiggle { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+    @keyframes particle-fly { 0% { transform: translate(0,0) scale(1); opacity: 1; } 100% { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; } }
+
+    /* ─── World Map ─── */
+    .world-map-wrap {
+      position: relative; z-index: 5;
+      width: 92%; max-width: 400px;
+      margin: 4px 0 14px;
     }
-    @keyframes pop {
-      0%   { transform: scale(.5) rotate(-8deg); }
-      60%  { transform: scale(1.2) rotate(4deg); }
-      100% { transform: scale(1) rotate(0deg); }
+    #world-map-svg {
+      width: 100%; height: auto;
+      border-radius: 14px;
+      border: 1.5px solid rgba(100,180,255,0.2);
+      box-shadow: 0 0 28px rgba(0,60,200,0.3), inset 0 0 50px rgba(0,10,60,0.6);
     }
-    @keyframes shake {
-      0%, 100% { transform: translateX(0); }
-      20%       { transform: translateX(-10px) rotate(-3deg); }
-      40%       { transform: translateX(10px) rotate(3deg); }
-      60%       { transform: translateX(-7px); }
-      80%       { transform: translateX(7px); }
+    .cont-shape {
+      fill: rgba(28,110,62,0.55);
+      stroke: rgba(80,200,130,0.35);
+      stroke-width: 1;
     }
-    @keyframes wiggle {
-      0%, 100% { transform: rotate(-4deg); }
-      50%       { transform: rotate(4deg); }
+    .cont-shape.active-from { fill: rgba(77,171,247,0.85); stroke: #4dabf7; stroke-width: 1.5; }
+    .cont-shape.active-to   { fill: rgba(255,217,61,0.85);  stroke: #ffd93d; stroke-width: 1.5; }
+    @keyframes dot-pulse {
+      0%, 100% { r: 4; opacity: 1; }
+      50%       { r: 7; opacity: 0.5; }
     }
-    @keyframes particle-fly {
-      0%   { transform: translate(0,0) scale(1); opacity: 1; }
-      100% { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; }
-    }
+    #map-to-dot { animation: dot-pulse 1s ease-in-out infinite; }
   </style>
 </head>
 <body>
 
-<!-- décorations flottantes -->
 <div class="deco" style="top:5%;  left:4%;  --dur:5s;  --delay:0s">🍕</div>
 <div class="deco" style="top:8%;  right:6%; --dur:7s;  --delay:.8s">🍰</div>
 <div class="deco" style="top:22%; left:1%;  --dur:6s;  --delay:1.5s">🥕</div>
@@ -403,27 +355,29 @@
 <div class="deco" style="bottom:28%;left:2%;--dur:7s; --delay:.5s">🍋</div>
 <div class="deco" style="top:55%; right:2%;--dur:6s;  --delay:1.8s">🍫</div>
 
-<!-- ═══════════════════════════ START SCREEN ═════════════════════════════ -->
+<!-- START -->
 <div id="start-screen" class="screen">
   <div class="logo">🍳</div>
   <h1>Hanaé Cuisine</h1>
-  <p class="subtitle">Teste tes connaissances culinaires&nbsp;!</p>
-  <ul class="rules-box">
-    <li>Une recette s'affiche à l'écran</li>
-    <li>Trouve le bon ingrédient !</li>
-    <li>⏱️ 30 secondes par question</li>
-    <li>Vite = plus de points ⭐</li>
-    <li>Erreur ou temps écoulé = 0 💔</li>
-  </ul>
+  <p class="subtitle">Un tour du monde des saveurs ! Trouve l'ingrédient qui fait partie de chaque recette.</p>
+  <div class="continent-list">
+    <span class="continent-badge" style="border-color:#4dabf7;color:#4dabf7">🗼 Europe</span>
+    <span class="continent-badge" style="border-color:#51cf66;color:#37a34a">🌍 Afrique</span>
+    <span class="continent-badge" style="border-color:#ff922b;color:#ff922b">🕌 Moyen-Orient</span>
+    <span class="continent-badge" style="border-color:#ff6eb4;color:#e0508f">🏯 Asie</span>
+    <span class="continent-badge" style="border-color:#a55eea;color:#a55eea">🗽 Amériques</span>
+  </div>
   <button class="btn-play" id="btn-start">🚀 C'est parti !</button>
 </div>
 
-<!-- ═══════════════════════════ GAME SCREEN ══════════════════════════════ -->
+<!-- GAME -->
 <div id="game-screen" class="screen hidden">
+  <div class="continent-banner" id="continent-banner">🗼 Europe</div>
 
   <div class="hud">
     <div class="hud-score">Score&nbsp;: <span id="score-val">0</span></div>
-    <div class="hud-counter" id="q-counter">Q 1 / 10</div>
+    <div class="hud-counter" id="q-counter">Q 1 / 5</div>
+    <div class="hud-pass">Objectif&nbsp;: 100</div>
   </div>
 
   <div class="timer-wrap">
@@ -435,57 +389,111 @@
     <div class="recipe-label">Recette</div>
     <div class="recipe-name" id="recipe-name">–</div>
     <div class="question-text">Quel ingrédient appartient à cette recette ?</div>
+    <div class="feedback" id="feedback"></div>
   </div>
 
   <div class="answers" id="answers"></div>
-
-  <div class="feedback" id="feedback"></div>
 </div>
 
-<!-- ═══════════════════════════ END SCREEN ═══════════════════════════════ -->
+<!-- TRAVEL TRANSITION -->
+<div id="travel-screen" class="screen hidden">
+  <div id="travel-stars-container"></div>
+
+  <div class="travel-score-badge">
+    <span class="pass-label" id="travel-result-icon">✅</span>
+    <span id="travel-score-text">Score : 0 / 150</span>
+  </div>
+
+  <div class="world-map-wrap">
+    <svg id="world-map-svg" viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg">
+      <!-- Ocean -->
+      <rect width="320" height="160" fill="rgba(2,10,45,0.9)" rx="12"/>
+      <!-- Continents -->
+      <path class="cont-shape" data-cont="Amériques"    d="M 16,18 L 80,12 L 112,22 L 112,38 L 96,52 L 112,52 L 112,62 L 96,72 L 94,82 L 130,86 L 162,100 L 155,125 L 140,148 L 115,152 L 92,130 L 76,102 L 74,82 L 52,62 L 28,38 Z"/>
+      <path class="cont-shape" data-cont="Europe"       d="M 148,22 L 180,16 L 192,22 L 196,30 L 188,38 L 183,40 L 185,46 L 178,50 L 165,50 L 152,44 L 148,34 Z"/>
+      <path class="cont-shape" data-cont="Afrique"      d="M 148,48 L 175,46 L 192,52 L 202,62 L 206,75 L 202,90 L 196,102 L 182,118 L 170,128 L 160,126 L 150,112 L 145,95 L 140,78 L 140,62 Z"/>
+      <path class="cont-shape" data-cont="Moyen-Orient" d="M 192,46 L 210,46 L 218,54 L 218,68 L 214,76 L 202,82 L 192,78 L 186,68 L 188,52 Z"/>
+      <path class="cont-shape" data-cont="Asie"         d="M 196,14 L 230,8 L 264,8 L 292,16 L 312,28 L 312,40 L 298,58 L 282,74 L 262,82 L 240,82 L 222,76 L 212,68 L 215,55 L 220,42 L 210,38 L 202,28 L 198,20 Z"/>
+      <path class="cont-shape"                          d="M 262,92 L 278,88 L 294,92 L 298,104 L 290,118 L 272,120 L 258,110 Z"/>
+      <!-- Route -->
+      <path id="map-route" fill="none" stroke="rgba(255,217,61,0.4)" stroke-width="2" stroke-dasharray="6,4" d=""/>
+      <!-- Dots -->
+      <circle id="map-from-dot" r="4" fill="rgba(77,171,247,0.9)" stroke="#fff" stroke-width="1.5" cx="-50" cy="-50"/>
+      <circle id="map-to-dot"   r="4" fill="rgba(255,217,61,0.9)"  stroke="#fff" stroke-width="1.5" cx="-50" cy="-50"/>
+      <!-- Plane -->
+      <text id="map-plane-emoji" font-size="14" text-anchor="middle" dominant-baseline="middle" transform="translate(-50,-50)">✈️</text>
+    </svg>
+  </div>
+
+  <div class="travel-destination" id="travel-destination">Prochain stop : Afrique !</div>
+</div>
+
+<!-- END -->
 <div id="end-screen" class="screen hidden">
   <div class="trophy" id="trophy">🏆</div>
   <div class="end-title" id="end-title">Partie terminée !</div>
   <div class="final-score" id="final-score">0</div>
-  <div class="final-max" id="final-max">/ 300 pts max</div>
+  <div class="final-max" id="final-max">/ 750 pts max</div>
   <div class="end-comment" id="end-comment"></div>
-  <button class="btn-retry" id="btn-retry">Rejouer</button>
+  <button class="btn-retry" id="btn-retry">🔄 Rejouer</button>
 </div>
 
 <script>
-  /* ─── State ──────────────────────────────────────── */
+      /* ─── Continent config ─── */
+      const CONTINENT_MAP_COORDS = {
+        'Amériques':    { x: 88,  y: 75 },
+        'Europe':       { x: 168, y: 33 },
+        'Afrique':      { x: 170, y: 88 },
+        'Moyen-Orient': { x: 202, y: 64 },
+        'Asie':         { x: 256, y: 46 },
+      };
+
+      const CONTINENTS = [
+        { name: 'Europe', emoji: '🗼', color: '#4dabf7', shadow: '#2193e8', bg: 'linear-gradient(135deg,#4dabf7,#2193e8)' },
+        { name: 'Afrique', emoji: '🌍', color: '#51cf66', shadow: '#37a34a', bg: 'linear-gradient(135deg,#51cf66,#37a34a)' },
+        { name: 'Moyen-Orient', emoji: '🕌', color: '#ff922b', shadow: '#c8640a', bg: 'linear-gradient(135deg,#ff922b,#c8640a)' },
+        { name: 'Asie', emoji: '🏯', color: '#ff6eb4', shadow: '#e0508f', bg: 'linear-gradient(135deg,#ff6eb4,#e0508f)' },
+        { name: 'Amériques', emoji: '🗽', color: '#a55eea', shadow: '#7c3aed', bg: 'linear-gradient(135deg,#a55eea,#7c3aed)' },
+      ];
+
   const TIMER_MAX   = 30;
-  const QUESTIONS_N = 10;        // questions par partie
-  const FEEDBACK_MS = 1400;      // durée d'affichage du feedback
+      const PASS_SCORE = 100;  // score minimum par continent
+      const FEEDBACK_MS = 1400;
+      const TRAVEL_MS = 3600; // durée animation voyage
 
-  let allQuestions  = [];
-  let questions     = [];        // subset shuffled pour la partie
-  let qIndex        = 0;
-  let score         = 0;
-  let timerInterval = null;
-  let timeLeft      = TIMER_MAX;
-  let answered      = false;
+      let allQuestions = [];
+      let questionsByContinent = {};
+      let continentIndex = 0;
+      let currentQuestions = [];
+      let qIndex = 0;
+      let continentScore = 0;
+      let totalScore = 0;
+      let timerInterval = null;
+      let timeLeft = TIMER_MAX;
+      let answered = false;
 
-  /* ─── DOM refs ───────────────────────────────────── */
-  const startScreen  = document.getElementById('start-screen');
-  const gameScreen   = document.getElementById('game-screen');
-  const endScreen    = document.getElementById('end-screen');
-  const btnStart     = document.getElementById('btn-start');
-  const btnRetry     = document.getElementById('btn-retry');
-  const scoreVal     = document.getElementById('score-val');
-  const qCounter     = document.getElementById('q-counter');
-  const timerBar     = document.getElementById('timer-bar');
-  const timerLabel   = document.getElementById('timer-label');
-  const recipeName   = document.getElementById('recipe-name');
-  const answersEl    = document.getElementById('answers');
-  const feedbackEl   = document.getElementById('feedback');
-  const finalScore   = document.getElementById('final-score');
-  const finalMax     = document.getElementById('final-max');
-  const endTitle     = document.getElementById('end-title');
-  const endComment   = document.getElementById('end-comment');
-  const trophy       = document.getElementById('trophy');
+      /* ─── DOM ─── */
+      const startScreen = document.getElementById('start-screen');
+      const gameScreen = document.getElementById('game-screen');
+      const travelScreen = document.getElementById('travel-screen');
+      const endScreen = document.getElementById('end-screen');
+      const btnStart = document.getElementById('btn-start');
+      const btnRetry = document.getElementById('btn-retry');
+      const scoreVal = document.getElementById('score-val');
+      const qCounter = document.getElementById('q-counter');
+      const timerBar = document.getElementById('timer-bar');
+      const timerLabel = document.getElementById('timer-label');
+      const recipeName = document.getElementById('recipe-name');
+      const answersEl = document.getElementById('answers');
+      const feedbackEl = document.getElementById('feedback');
+      const continentBanner = document.getElementById('continent-banner');
+      const finalScore = document.getElementById('final-score');
+      const finalMax = document.getElementById('final-max');
+      const endTitle = document.getElementById('end-title');
+      const endComment = document.getElementById('end-comment');
+      const trophy = document.getElementById('trophy');
 
-  /* ─── Helpers ────────────────────────────────────── */
+      /* ─── Helpers ─── */
   function shuffle(arr) {
     const a = [...arr];
     for (let i = a.length - 1; i > 0; i--) {
@@ -494,53 +502,77 @@
     }
     return a;
   }
+      function show(el) { el.classList.remove('hidden'); }
+      function hide(el) { el.classList.add('hidden'); }
 
-  function show(el)  { el.classList.remove('hidden'); }
-  function hide(el)  { el.classList.add('hidden'); }
-
-  /* ─── Load questions ─────────────────────────────── */
+      /* ─── Load questions ─── */
   async function loadQuestions() {
-    const res  = await fetch('questions.json');
-    allQuestions = await res.json();
+    const res = await fetch('questions.json');
+    const data = await res.json();
+    allQuestions = data;
+    CONTINENTS.forEach(c => {
+      questionsByContinent[c.name] = data.filter(q => q.continent === c.name);
+    });
   }
 
-  /* ─── Start game ─────────────────────────────────── */
+      /* ─── Start game (from the top) ─── */
   function startGame() {
-    questions = shuffle(allQuestions).slice(0, QUESTIONS_N);
-    qIndex    = 0;
-    score     = 0;
-    scoreVal.textContent = 0;
+    continentIndex = 0;
+    totalScore = 0;
     hide(startScreen);
     hide(endScreen);
+            hide(travelScreen);
+            startContinent();
+          }
+
+          /* ─── Start a continent round ─── */
+          function startContinent() {
+            const cont = CONTINENTS[continentIndex];
+            const pool = questionsByContinent[cont.name] || [];
+            currentQuestions = shuffle(pool);
+            qIndex = 0;
+            continentScore = 0;
+            scoreVal.textContent = 0;
+
+            // Update banner
+            continentBanner.textContent = `${cont.emoji} ${cont.name}`;
+            continentBanner.style.background = cont.bg;
+
     show(gameScreen);
+
+        if (currentQuestions.length === 0) {
+          recipeName.textContent = '⚠️ Chargement en cours…';
+          answersEl.innerHTML = '';
+          return;
+        }
+
     loadQuestion();
   }
 
-  /* ─── Load question ──────────────────────────────── */
+      /* ─── Load question ─── */
   function loadQuestion() {
     answered = false;
-    const q  = questions[qIndex];
+    const q = currentQuestions[qIndex];
 
-    qCounter.textContent     = `Q ${qIndex + 1} / ${questions.length}`;
-    recipeName.textContent   = q.recette;
-    feedbackEl.className     = 'feedback';
-    feedbackEl.textContent   = '';
+    qCounter.textContent = `Q ${qIndex + 1} / ${currentQuestions.length}`;
+    recipeName.textContent = q.recette;
+    feedbackEl.className = 'feedback';
+    feedbackEl.textContent = '';
 
-    // Shuffle answers
     const shuffled = shuffle(q.reponses);
     answersEl.innerHTML = '';
     shuffled.forEach(rep => {
       const btn = document.createElement('button');
       btn.className   = 'btn-answer';
       btn.textContent = rep;
-      btn.addEventListener('click', () => handleAnswer(rep, q.bonne_reponse, btn, q));
+      btn.addEventListener('click', () => handleAnswer(rep, q.bonne_reponse, btn));
       answersEl.appendChild(btn);
     });
 
     startTimer();
   }
 
-  /* ─── Timer ──────────────────────────────────────── */
+      /* ─── Timer ─── */
   function startTimer() {
     timeLeft = TIMER_MAX;
     updateTimerUI();
@@ -548,47 +580,38 @@
     timerInterval = setInterval(() => {
       timeLeft--;
       updateTimerUI();
-      if (timeLeft <= 0) {
-        clearInterval(timerInterval);
-        if (!answered) handleTimeout();
-      }
+      if (timeLeft <= 0) { clearInterval(timerInterval); if (!answered) handleTimeout(); }
     }, 1000);
   }
 
   function updateTimerUI() {
-    const pct = (timeLeft / TIMER_MAX) * 100;
-    timerBar.style.width = pct + '%';
+    timerBar.style.width = (timeLeft / TIMER_MAX * 100) + '%';
     timerLabel.textContent = timeLeft + ' s';
     const low = timeLeft <= 8;
     timerBar.classList.toggle('low', low);
     timerLabel.classList.toggle('low', low);
   }
 
-  /* ─── Handle answer ──────────────────────────────── */
-  function handleAnswer(chosen, correct, btn, q) {
+      /* ─── Handle answer ─── */
+      function handleAnswer(chosen, correct, btn) {
     if (answered) return;
     answered = true;
     clearInterval(timerInterval);
 
     const isCorrect = chosen === correct;
     const pts       = isCorrect ? timeLeft : 0;
-    score += pts;
-    scoreVal.textContent = score;
+      continentScore += pts;
+      totalScore += pts;
+      scoreVal.textContent = continentScore;
 
-    // Style buttons
     document.querySelectorAll('.btn-answer').forEach(b => {
       b.disabled = true;
       if (b.textContent === correct && !isCorrect) b.classList.add('reveal');
     });
     btn.classList.add(isCorrect ? 'correct' : 'wrong');
 
-    // Feedback overlay
-    if (isCorrect) {
-      showFeedback(true, pts);
-      spawnParticles();
-    } else {
-      showFeedback(false, 0);
-    }
+      if (isCorrect) { showFeedback(true, pts); spawnParticles(); }
+      else { showFeedback(false, 0); }
 
     setTimeout(nextQuestion, FEEDBACK_MS);
   }
@@ -597,52 +620,43 @@
     answered = true;
     document.querySelectorAll('.btn-answer').forEach(b => {
       b.disabled = true;
-      const q = questions[qIndex];
-      if (b.textContent === q.bonne_reponse) b.classList.add('reveal');
+      if (b.textContent === currentQuestions[qIndex].bonne_reponse) b.classList.add('reveal');
     });
     showFeedback(false, 0, true);
     setTimeout(nextQuestion, FEEDBACK_MS);
   }
 
-  /* ─── Feedback overlay ───────────────────────────── */
+      /* ─── Feedback overlay ─── */
   function showFeedback(correct, pts, timeout = false) {
     feedbackEl.innerHTML = '';
     const main = document.createElement('div');
-    if (timeout) {
-      main.textContent = '⏰ TEMPS !';
-    } else {
-      main.textContent = correct ? '✅ BRAVO !' : '❌ RATÉ !';
-    }
+    main.textContent = timeout ? '⏰ TEMPS !' : (correct ? '✅ BRAVO !' : '❌ RATÉ !');
     feedbackEl.appendChild(main);
-
     if (correct && pts > 0) {
       const ptsEl = document.createElement('div');
       ptsEl.className   = 'pts';
-      ptsEl.textContent = `+${pts} points`;
+      ptsEl.textContent = `+${pts} pts`;
       feedbackEl.appendChild(ptsEl);
     }
-
     feedbackEl.className = `feedback show ${correct ? 'correct-fb' : 'wrong-fb'}`;
-    setTimeout(() => { feedbackEl.classList.remove('show'); }, FEEDBACK_MS - 200);
+    setTimeout(() => feedbackEl.classList.remove('show'), FEEDBACK_MS - 200);
   }
 
-  /* ─── Particles ──────────────────────────────────── */
+      /* ─── Particles ─── */
   function spawnParticles() {
     const colors = ['#1abc9c','#f1c40f','#2ecc71','#3498db','#9b59b6','#e74c3c'];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 18; i++) {
       const p = document.createElement('div');
       p.className = 'particle';
-      const dx = (Math.random() - .5) * 340;
-      const dy = (Math.random() - .5) * 500;
+      const dx = (Math.random() - .5) * 320;
+      const dy = (Math.random() - .5) * 460;
       p.style.cssText = `
         left: calc(50% + ${(Math.random()-.5)*60}px);
         top:  calc(50% + ${(Math.random()-.5)*60}px);
         background: ${colors[Math.floor(Math.random()*colors.length)]};
-        --dx: ${dx}px;
-        --dy: ${dy}px;
+        --dx: ${dx}px; --dy: ${dy}px;
         animation-duration: ${.5 + Math.random()*.6}s;
-        width:  ${6 + Math.random()*8}px;
-        height: ${6 + Math.random()*8}px;
+        width: ${6 + Math.random() * 8}px; height: ${6 + Math.random() * 8}px;
         border-radius: ${Math.random() > .5 ? '50%' : '3px'};
       `;
       gameScreen.appendChild(p);
@@ -650,55 +664,188 @@
     }
   }
 
-  /* ─── Next question / End ────────────────────────── */
+      /* ─── Next question ─── */
   function nextQuestion() {
     qIndex++;
-    if (qIndex >= questions.length) {
-      endGame();
+    if (qIndex >= currentQuestions.length) {
+      // End of continent
+      endContinent();
     } else {
       loadQuestion();
     }
   }
 
-  /* ─── End game ───────────────────────────────────── */
-  function endGame() {
+      /* ─── End of continent ─── */
+      function endContinent() {
     hide(gameScreen);
+            const passed = continentScore > PASS_SCORE;
+
+            if (!passed) {
+              // Failed this continent → game over
+              showEndScreen(false);
+              return;
+            }
+
+            const isLast = continentIndex >= CONTINENTS.length - 1;
+            if (isLast) {
+              // Won all continents !
+              showEndScreen(true);
+            } else {
+              // Show travel animation then next continent
+              showTravelScreen();
+            }
+          }
+
+          /* ─── Travel animation screen ─── */
+          function showTravelScreen() {
+            const from = CONTINENTS[continentIndex];
+            const to = CONTINENTS[continentIndex + 1];
+
+            document.getElementById('travel-result-icon').textContent = '✅ Continent réussi !';
+            document.getElementById('travel-score-text').textContent =
+              `Score : ${continentScore} / ${currentQuestions.length * TIMER_MAX} pts`;
+            document.getElementById('travel-destination').textContent = `Prochain stop : ${to.emoji} ${to.name} !`;
+
+            buildTravelStars();
+            highlightContinents(from.name, to.name);
+            resetTravelAnimation(from.name, to.name);
+
+            show(travelScreen);
+
+            setTimeout(() => {
+              hide(travelScreen);
+              continentIndex++;
+              startContinent();
+            }, TRAVEL_MS);
+          }
+
+          function highlightContinents(fromName, toName) {
+            document.querySelectorAll('.cont-shape').forEach(el => {
+              el.classList.remove('active-from', 'active-to');
+              const c = el.dataset.cont;
+              if (c === fromName) el.classList.add('active-from');
+              else if (c === toName) el.classList.add('active-to');
+            });
+          }
+
+          function animatePlane(fromName, toName) {
+            const from = CONTINENT_MAP_COORDS[fromName];
+            const to   = CONTINENT_MAP_COORDS[toName];
+            if (!from || !to) return;
+
+            const planeEl = document.getElementById('map-plane-emoji');
+            const routeEl = document.getElementById('map-route');
+            const fromDot = document.getElementById('map-from-dot');
+            const toDot   = document.getElementById('map-to-dot');
+
+            fromDot.setAttribute('cx', from.x); fromDot.setAttribute('cy', from.y);
+            toDot.setAttribute('cx', to.x);     toDot.setAttribute('cy', to.y);
+
+            // Quadratic bezier control point (arc above midpoint)
+            const mx = (from.x + to.x) / 2;
+            const my = (from.y + to.y) / 2;
+            const dist = Math.hypot(to.x - from.x, to.y - from.y);
+            const cx = mx, cy = my - dist * 0.42;
+
+            routeEl.setAttribute('d', `M${from.x},${from.y} Q${cx},${cy} ${to.x},${to.y}`);
+
+            const duration = TRAVEL_MS - 700;
+            const startTime = performance.now();
+
+            function step(now) {
+              let t = Math.min((now - startTime) / duration, 1);
+              // ease-in-out
+              const te = t < 0.5 ? 2*t*t : -1 + (4 - 2*t)*t;
+              const bx = (1-te)**2 * from.x + 2*(1-te)*te * cx + te**2 * to.x;
+              const by = (1-te)**2 * from.y + 2*(1-te)*te * cy + te**2 * to.y;
+              const dbx = 2*(1-te)*(cx - from.x) + 2*te*(to.x - cx);
+              const dby = 2*(1-te)*(cy - from.y) + 2*te*(to.y - cy);
+              const angle = Math.atan2(dby, dbx) * 180 / Math.PI;
+              planeEl.setAttribute('transform', `translate(${bx},${by}) rotate(${angle})`);
+              if (t < 1) requestAnimationFrame(step);
+            }
+
+            planeEl.setAttribute('transform', `translate(${from.x},${from.y}) rotate(0)`);
+            requestAnimationFrame(step);
+          }
+
+          function buildTravelStars() {
+            const container = document.getElementById('travel-stars-container');
+            container.innerHTML = '';
+            for (let i = 0; i < 60; i++) {
+              const s = document.createElement('div');
+              s.className = 'travel-star';
+              const size = 1 + Math.random() * 3;
+              s.style.cssText = `
+        left: ${Math.random() * 100}%;
+        top:  ${Math.random() * 100}%;
+        width: ${size}px; height: ${size}px;
+        --s-dur:   ${1.5 + Math.random() * 2.5}s;
+        --s-delay: ${Math.random() * 2}s;
+      `;
+              container.appendChild(s);
+            }
+          }
+
+          function resetTravelAnimation(fromName, toName) {
+            // Re-trigger destination reveal animation
+            const dest = document.getElementById('travel-destination');
+            const destClone = dest.cloneNode(true);
+            dest.parentNode.replaceChild(destClone, dest);
+            // Animate plane on map
+            animatePlane(fromName, toName);
+          }
+
+          /* ─── End screen ─── */
+          function showEndScreen(victory) {
     show(endScreen);
 
-    const max = questions.length * TIMER_MAX;
-    finalScore.textContent = score;
-    finalMax.textContent   = `/ ${max} pts max`;
-
-    const pct = score / max;
-    if (pct >= .8) {
-      trophy.textContent       = '🏆';
-      endTitle.textContent     = 'Chef étoilé !';
-      endComment.textContent   = 'Incroyable ! Tu es un vrai chef cuisinier 🍾';
-    } else if (pct >= .5) {
-      trophy.textContent       = '🥈';
-      endTitle.textContent     = 'Bon résultat !';
-      endComment.textContent   = 'Belle performance ! Encore un peu d\'entraînement et tu décroches l\'étoile 🌟';
-    } else if (pct >= .25) {
-      trophy.textContent       = '🥉';
-      endTitle.textContent     = 'Pas mal !';
-      endComment.textContent   = 'Tu commence à connaître ta cuisine ! Continue comme ça 🍳';
+        if (victory) {
+          const max = CONTINENTS.length * currentQuestions.length * TIMER_MAX;
+          finalScore.textContent = totalScore;
+          finalMax.textContent = `/ ${max} pts max · ${CONTINENTS.length} continents conquis !`;
+          trophy.textContent = '🏆';
+          endTitle.textContent = 'Tour du monde accompli !';
+          const pct = totalScore / max;
+          if (pct >= .75) {
+            endComment.textContent = 'Incroyable ! Tu es un chef cuisinier du monde entier 🌍🍾';
+          } else if (pct >= .5) {
+        endComment.textContent = 'Beau voyage gastronomique ! Tu maîtrises les cuisines du monde 🌟';
+      } else {
+        endComment.textContent = 'Tu as fait le tour du monde ! Encore un peu d\'entraînement pour les étoiles ⭐';
+      }
     } else {
-      trophy.textContent       = '👨‍🍳';
-      endTitle.textContent     = 'En apprentissage !';
-      endComment.textContent   = 'La cuisine ça s\'apprend ! Retente ta chance 😄';
+      const cont = CONTINENTS[continentIndex];
+      finalScore.textContent = continentScore;
+      finalMax.textContent = `/ ${currentQuestions.length * TIMER_MAX} pts · objectif 100`;
+      trophy.textContent = '😔';
+      endTitle.textContent = `Recalé en ${cont.name} !`;
+      endComment.textContent = `Score de ${continentScore} pts — il fallait plus de 100 pts pour continuer le voyage ! ${cont.emoji} Retente ta chance !`;
     }
 
     finalScore.style.animation = 'none';
     requestAnimationFrame(() => { finalScore.style.animation = 'pop .5s ease'; });
   }
 
-  /* ─── Init ───────────────────────────────────────── */
-  btnStart.addEventListener('click', startGame);
-  btnRetry.addEventListener('click', startGame);
+      /* ─── Init ─── */
+      btnStart.addEventListener('click', () => {
+        if (Object.keys(questionsByContinent).length === 0) {
+          btnStart.textContent = '⏳ Chargement…';
+          return;
+        }
+        startGame();
+      });
+      btnRetry.addEventListener('click', () => {
+        hide(endScreen);
+        show(startScreen);
+      });
 
-  loadQuestions().catch(err => {
-    console.error('Impossible de charger les questions :', err);
-  });
+      loadQuestions()
+        .then(() => { btnStart.textContent = '🚀 C\'est parti !'; })
+        .catch(err => {
+          console.error('Erreur chargement questions :', err);
+          btnStart.textContent = '❌ Erreur de chargement';
+        });
 </script>
 </body>
 </html>

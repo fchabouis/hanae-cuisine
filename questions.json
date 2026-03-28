@@ -1,202 +1,31 @@
 [
-  {
-    "recette": "Crêpe",
-    "reponses": ["Farine", "Viande de mouton", "Pomme de terre", "Basilic"],
-    "bonne_reponse": "Farine"
-  },
-  {
-    "recette": "Ratatouille",
-    "reponses": ["Courgette", "Saumon fumé", "Chocolat noir", "Levure chimique"],
-    "bonne_reponse": "Courgette"
-  },
-  {
-    "recette": "Quiche Lorraine",
-    "reponses": ["Fraises", "Lardons", "Riz basmati", "Cannelle"],
-    "bonne_reponse": "Lardons"
-  },
-  {
-    "recette": "Tarte Tatin",
-    "reponses": ["Poisson blanc", "Curry en poudre", "Pommes", "Nouilles"],
-    "bonne_reponse": "Pommes"
-  },
-  {
-    "recette": "Bouillabaisse",
-    "reponses": ["Fraises des bois", "Beurre de cacahuète", "Banane", "Poisson"],
-    "bonne_reponse": "Poisson"
-  },
-  {
-    "recette": "Croissant",
-    "reponses": ["Tomates cerises", "Beurre", "Poivrons rouges", "Lentilles corail"],
-    "bonne_reponse": "Beurre"
-  },
-  {
-    "recette": "Soufflé au chocolat",
-    "reponses": ["Cornichons", "Radis noir", "Anchois", "Chocolat"],
-    "bonne_reponse": "Chocolat"
-  },
-  {
-    "recette": "Salade Niçoise",
-    "reponses": ["Chocolat blanc", "Thon", "Farine de blé", "Sucre glace"],
-    "bonne_reponse": "Thon"
-  },
-  {
-    "recette": "Bœuf Bourguignon",
-    "reponses": ["Vanille en poudre", "Lait de coco", "Vin rouge", "Menthe fraîche"],
-    "bonne_reponse": "Vin rouge"
-  },
-  {
-    "recette": "Mousse au chocolat",
-    "reponses": ["Ail", "Cornichons", "Olives noires", "Œufs"],
-    "bonne_reponse": "Œufs"
-  },
-  {
-    "recette": "Pizza Margherita",
-    "reponses": ["Mozzarella", "Foie gras", "Choucroute", "Crème fraîche"],
-    "bonne_reponse": "Mozzarella"
-  },
-  {
-    "recette": "Guacamole",
-    "reponses": ["Betterave", "Avocat", "Chou rouge", "Feta"],
-    "bonne_reponse": "Avocat"
-  },
-  {
-    "recette": "Tiramisù",
-    "reponses": ["Hareng fumé", "Ketchup", "Mascarpone", "Moutarde"],
-    "bonne_reponse": "Mascarpone"
-  },
-  {
-    "recette": "Paella",
-    "reponses": ["Cacao en poudre", "Riz", "Sucre roux", "Confiture"],
-    "bonne_reponse": "Riz"
-  },
-  {
-    "recette": "Taboulé",
-    "reponses": ["Semoule", "Pâte feuilletée", "Caramel", "Levure de bière"],
-    "bonne_reponse": "Semoule"
-  },
-  {
-    "recette": "Fondant au chocolat",
-    "reponses": ["Sardines", "Câpres", "Beurre", "Algues"],
-    "bonne_reponse": "Beurre"
-  },
-  {
-    "recette": "Pot-au-feu",
-    "reponses": ["Nutella", "Bœuf", "Sirop d'érable", "Piment doux"],
-    "bonne_reponse": "Bœuf"
-  },
-  {
-    "recette": "Tapenade",
-    "reponses": ["Framboises", "Olives", "Gruyère", "Miel"],
-    "bonne_reponse": "Olives"
-  },
-  {
-    "recette": "Blanquette de veau",
-    "reponses": ["Veau", "Curcuma", "Maïs", "Noix de cajou"],
-    "bonne_reponse": "Veau"
-  },
-  {
-    "recette": "Crème brûlée",
-    "reponses": ["Miso", "Tabasco", "Jaunes d'œufs", "Vinaigre balsamique"],
-    "bonne_reponse": "Jaunes d'œufs"
-  },
-  {
-    "recette": "Gaspacho",
-    "reponses": ["Tomates", "Lardons", "Farine", "Gruyère râpé"],
-    "bonne_reponse": "Tomates"
-  },
-  {
-    "recette": "Gratin dauphinois",
-    "reponses": ["Fraises", "Pommes de terre", "Pâtes", "Lentilles"],
-    "bonne_reponse": "Pommes de terre"
-  },
-  {
-    "recette": "Coq au vin",
-    "reponses": ["Ananas", "Poulet", "Chocolat au lait", "Bonbons"],
-    "bonne_reponse": "Poulet"
-  },
-  {
-    "recette": "Fondue savoyarde",
-    "reponses": ["Fromage", "Pastèque", "Chips", "Kiwi"],
-    "bonne_reponse": "Fromage"
-  },
-  {
-    "recette": "Tarte aux fraises",
-    "reponses": ["Saucisson", "Moutarde", "Fraises", "Curry"],
-    "bonne_reponse": "Fraises"
-  },
-  {
-    "recette": "Sushi",
-    "reponses": ["Potiron", "Riz vinaigré", "Carottes râpées", "Lait"],
-    "bonne_reponse": "Riz vinaigré"
-  },
-  {
-    "recette": "Banana bread",
-    "reponses": ["Cornichons", "Betterave", "Banane", "Sardines"],
-    "bonne_reponse": "Banane"
-  },
-  {
-    "recette": "Soupe à l'oignon",
-    "reponses": ["Oignons", "Mangue", "Biscuits", "Soda"],
-    "bonne_reponse": "Oignons"
-  },
-  {
-    "recette": "Clafoutis",
-    "reponses": ["Olives vertes", "Anchois", "Cerises", "Épinards"],
-    "bonne_reponse": "Cerises"
-  },
-  {
-    "recette": "Risotto",
-    "reponses": ["Riz rond", "Farine de maïs", "Pain de mie", "Flocons d'avoine"],
-    "bonne_reponse": "Riz rond"
-  },
-  {
-    "recette": "Tarte au citron",
-    "reponses": ["Citron", "Radis", "Poireaux", "Petits pois"],
-    "bonne_reponse": "Citron"
-  },
-  {
-    "recette": "Chili con carne",
-    "reponses": ["Framboises", "Haricots rouges", "Crème pâtissière", "Chou-fleur"],
-    "bonne_reponse": "Haricots rouges"
-  },
-  {
-    "recette": "Madeleine",
-    "reponses": ["Hareng", "Beurre", "Radis noir", "Moutarde forte"],
-    "bonne_reponse": "Beurre"
-  },
-  {
-    "recette": "Hummus",
-    "reponses": ["Pois chiches", "Lardons", "Riz sauvage", "Chocolat"],
-    "bonne_reponse": "Pois chiches"
-  },
-  {
-    "recette": "Pad thaï",
-    "reponses": ["Baguette", "Endives", "Nouilles de riz", "Camembert"],
-    "bonne_reponse": "Nouilles de riz"
-  },
-  {
-    "recette": "Éclair au café",
-    "reponses": ["Café", "Poivre noir", "Anchois", "Câpres"],
-    "bonne_reponse": "Café"
-  },
-  {
-    "recette": "Aligot",
-    "reponses": ["Pastèque", "Purée de pommes de terre", "Riz complet", "Biscuits secs"],
-    "bonne_reponse": "Purée de pommes de terre"
-  },
-  {
-    "recette": "Pancakes",
-    "reponses": ["Sardines", "Paprika fumé", "Œufs", "Algues wakamé"],
-    "bonne_reponse": "Œufs"
-  },
-  {
-    "recette": "Financier",
-    "reponses": ["Piment d'Espelette", "Cornichons", "Poudre d'amandes", "Hareng fumé"],
-    "bonne_reponse": "Poudre d'amandes"
-  },
-  {
-    "recette": "Pesto",
-    "reponses": ["Caramel au beurre salé", "Basilic", "Confiture de figues", "Lait ribot"],
-    "bonne_reponse": "Basilic"
-  }
+  { "continent": "Europe", "recette": "Crêpe", "reponses": ["Farine", "Viande de mouton", "Pomme de terre", "Basilic"], "bonne_reponse": "Farine" },
+  { "continent": "Europe", "recette": "Pizza Margherita", "reponses": ["Mozzarella", "Foie gras", "Choucroute", "Crème fraîche"], "bonne_reponse": "Mozzarella" },
+  { "continent": "Europe", "recette": "Paella", "reponses": ["Cacao en poudre", "Riz", "Sucre roux", "Confiture"], "bonne_reponse": "Riz" },
+  { "continent": "Europe", "recette": "Tiramisù", "reponses": ["Hareng fumé", "Ketchup", "Mascarpone", "Moutarde"], "bonne_reponse": "Mascarpone" },
+  { "continent": "Europe", "recette": "Pesto", "reponses": ["Caramel au beurre salé", "Basilic", "Confiture de figues", "Lait ribot"], "bonne_reponse": "Basilic" },
+
+  { "continent": "Afrique", "recette": "Couscous", "reponses": ["Semoule", "Riz rond", "Farine de blé", "Flocons d'avoine"], "bonne_reponse": "Semoule" },
+  { "continent": "Afrique", "recette": "Tajine", "reponses": ["Agneau", "Canard laqué", "Saumon", "Dinde rôtie"], "bonne_reponse": "Agneau" },
+  { "continent": "Afrique", "recette": "Mafé", "reponses": ["Pâte d'arachide", "Crème de coco", "Beurre clarifié", "Sauce tomate"], "bonne_reponse": "Pâte d'arachide" },
+  { "continent": "Afrique", "recette": "Thiéboudienne", "reponses": ["Poisson", "Bœuf haché", "Poulet rôti", "Crevettes marinées"], "bonne_reponse": "Poisson" },
+  { "continent": "Afrique", "recette": "Injera", "reponses": ["Farine de teff", "Farine de blé", "Farine de riz", "Farine de maïs"], "bonne_reponse": "Farine de teff" },
+
+  { "continent": "Moyen-Orient", "recette": "Hummus", "reponses": ["Pois chiches", "Lardons", "Riz sauvage", "Chocolat"], "bonne_reponse": "Pois chiches" },
+  { "continent": "Moyen-Orient", "recette": "Taboulé", "reponses": ["Semoule", "Pâte feuilletée", "Caramel", "Levure de bière"], "bonne_reponse": "Semoule" },
+  { "continent": "Moyen-Orient", "recette": "Falafel", "reponses": ["Pois chiches", "Lentilles vertes", "Haricots blancs", "Maïs doux"], "bonne_reponse": "Pois chiches" },
+  { "continent": "Moyen-Orient", "recette": "Chawarma", "reponses": ["Viande marinée", "Poisson cru", "Champignons farcis", "Tofu fumé"], "bonne_reponse": "Viande marinée" },
+  { "continent": "Moyen-Orient", "recette": "Baba ganoush", "reponses": ["Aubergine", "Courgette", "Poivron rouge", "Patate douce"], "bonne_reponse": "Aubergine" },
+
+  { "continent": "Asie", "recette": "Sushi", "reponses": ["Potiron", "Riz vinaigré", "Carottes râpées", "Lait"], "bonne_reponse": "Riz vinaigré" },
+  { "continent": "Asie", "recette": "Pad thaï", "reponses": ["Baguette", "Endives", "Nouilles de riz", "Camembert"], "bonne_reponse": "Nouilles de riz" },
+  { "continent": "Asie", "recette": "Curry", "reponses": ["Pâte de curry", "Crème fraîche", "Cornichons", "Anchois"], "bonne_reponse": "Pâte de curry" },
+  { "continent": "Asie", "recette": "Ramen", "reponses": ["Nouilles de blé", "Riz basmati", "Semoule", "Tapioca"], "bonne_reponse": "Nouilles de blé" },
+  { "continent": "Asie", "recette": "Nems", "reponses": ["Galette de riz", "Pain de mie", "Baguette", "Feuilletage"], "bonne_reponse": "Galette de riz" },
+
+  { "continent": "Amériques", "recette": "Guacamole", "reponses": ["Betterave", "Avocat", "Chou rouge", "Feta"], "bonne_reponse": "Avocat" },
+  { "continent": "Amériques", "recette": "Chili con carne", "reponses": ["Framboises", "Haricots rouges", "Crème pâtissière", "Chou-fleur"], "bonne_reponse": "Haricots rouges" },
+  { "continent": "Amériques", "recette": "Banana bread", "reponses": ["Cornichons", "Betterave", "Banane", "Sardines"], "bonne_reponse": "Banane" },
+  { "continent": "Amériques", "recette": "Pancakes", "reponses": ["Sardines", "Paprika fumé", "Œufs", "Algues wakamé"], "bonne_reponse": "Œufs" },
+  { "continent": "Amériques", "recette": "Tacos", "reponses": ["Tortilla de maïs", "Baguette croustillante", "Naan au beurre", "Pain de seigle"], "bonne_reponse": "Tortilla de maïs" }
 ]
